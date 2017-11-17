@@ -1,7 +1,10 @@
-package test;
+package apiautomation;
 
 import org.junit.*;
 import com.sun.javafx.collections.MappingChange.Map;
+
+import helpers.api.BasePath;
+
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static  org.hamcrest.Matchers.*;

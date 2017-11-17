@@ -1,7 +1,10 @@
-package test;
+package apiautomation;
 
 import org.junit.*;
 import com.sun.javafx.collections.MappingChange.Map;
+
+import helpers.api.BasePath;
+import helpers.api.Person;
 
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
@@ -12,23 +15,27 @@ import java.util.HashMap;
 
 
 
-public class AddNewPerson extends BasePath {
+public class UpdateAPerson extends BasePath {
 	
 	@Test
-	public void addANewPerson()
+	public void updateNewPerson()
 	{
-		
-		Person person = new Person("Dolly", "Parton", "25");
+		Person person = new Person("Dolly", "Parton", "4","1908");
 		
 		System.out.println(person.getAttributes());
 		
 		given()
-		.contentType("application/json")
 		.body(person.getAttributes())
 		.when()
-		.post("/AddPerson")
+		.contentType("application/json")
+		.put("/UpdatePerson")
 		.then().statusCode(204);
 		
+		
+		
+//		given().pathParam("Id", 1906)
+//		.when().delete("/DeletePerson/{Id}")
+//		.then().statusCode(204);
 		
 		
 	}
