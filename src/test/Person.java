@@ -12,12 +12,6 @@ public class Person {
 	
 	HashMap<String, String> setPerson = new HashMap<>();
 	
-
-	
-	//setPerson.put("FirstName", "Marvel");
-	
-	
-	
 	public  Person(String firstName)
 	{
 		
