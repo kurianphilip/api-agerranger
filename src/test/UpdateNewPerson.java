@@ -12,24 +12,27 @@ import java.util.HashMap;
 
 
 
-public class UpdateNewPerson extends FunctionalTest2 {
+public class UpdateNewPerson extends BasePath {
 	
 	@Test
-	public void addANewPerson()
+	public void updateNewPerson()
 	{
-		HashMap<String, String> person = new HashMap<>();
-		person.put("FirstName", "Marvel");
-		person.put("LastName", "Avengers");
-		person.put("Age",  "1000");
+		Person person = new Person("Dolly", "Parton", "4","1908");
 		
+		System.out.println(person.getAttributes());
 		
 		given()
-		.contentType("application/json")
-		.body(person)
+		.body(person.getAttributes())
 		.when()
-		.post("/AddPerson")
+		.contentType("application/json")
+		.put("/UpdatePerson")
 		.then().statusCode(204);
 		
+		
+		
+//		given().pathParam("Id", 1906)
+//		.when().delete("/DeletePerson/{Id}")
+//		.then().statusCode(204);
 		
 		
 	}

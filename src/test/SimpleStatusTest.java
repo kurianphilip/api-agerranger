@@ -7,7 +7,7 @@ import static io.restassured.matcher.RestAssuredMatchers.*;
 import static  org.hamcrest.Matchers.*;
 
 
-public class GarageRestTest extends FunctionalTest2 {
+public class SimpleStatusTest extends BasePath {
 	
 	@Test
 	public void basicPingTest() {

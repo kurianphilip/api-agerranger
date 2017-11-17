@@ -8,7 +8,7 @@ import static  org.hamcrest.Matchers.*;
 
 
 
-public class GetContentTest extends FunctionalTest2 {
+public class GetContentTest extends BasePath {
 	
 	@Test
 	public void verifyName(){

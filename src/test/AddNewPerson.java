@@ -12,20 +12,19 @@ import java.util.HashMap;
 
 
 
-public class AddNewPerson extends FunctionalTest2 {
+public class AddNewPerson extends BasePath {
 	
 	@Test
 	public void addANewPerson()
 	{
-		HashMap<String, String> person = new HashMap<>();
-		person.put("FirstName", "Marvel");
-		person.put("LastName", "Avengers");
-		person.put("Age",  "1000");
 		
+		Person person = new Person("Dolly", "Parton", "25");
+		
+		System.out.println(person.getAttributes());
 		
 		given()
 		.contentType("application/json")
-		.body(person)
+		.body(person.getAttributes())
 		.when()
 		.post("/AddPerson")
 		.then().statusCode(204);
